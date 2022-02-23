@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<h> Horse List </h>
+
+{% if horse_list %}
+    <ui>
+    {% for horse in horse_list %}
+        <li>
+        <a href="{% url 'app:horse' horse.pk %}">
+            {{ horse.HorseName }}
+        </a>
+        </li>
+    {% endfor %}
+    </ui>
+{% else %}
+    <p>
+        Error
+    </p>
+{% endif %}
